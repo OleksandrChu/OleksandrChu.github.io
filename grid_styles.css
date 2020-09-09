@@ -1,0 +1,48 @@
+.grid-container {
+    display: grid;
+    width: 100%;
+    height: 70%;
+    grid-template-areas: "header header header"
+                       "aside content content"
+                       "aside content content"
+                       "aside extra extra";
+                       "footer footer footer";
+    grid-template-rows:  repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+header{
+    grid-area: header;
+    text-align: center;
+    background: aqua;
+}
+
+aside {
+    grid-area: aside;
+    background: #4a8b12;
+}
+main {
+    grid-area: content;
+    background: #4A00E0;
+}
+
+div.extra_context {
+    grid-area: extra;
+    background: gray;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    background: coral;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+html, body
+{
+    height: 100%;
+}

@@ -1,0 +1,54 @@
+header{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: aqua;
+}
+
+div.container
+{
+    display: flex;
+    height: 70%;
+}
+
+aside {
+    width: 30%;
+    background: #4a8b12;
+}
+
+div.content_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    height: 90%;
+    background: #c6c304;
+}
+
+div.extra_context {
+    display: block;
+    height: 10%;
+    background: gray;
+}
+
+footer {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    background: coral;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+html, body
+{
+    height: 100%;
+    
+}
