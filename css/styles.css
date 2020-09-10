@@ -14,7 +14,7 @@
     background: linear-gradient(to right, #8E2DE2, #4A00E0);
 }
 
-div.header_content {
+.header_content {
     display: inline-block;
     width: 30%;
     margin-right: 1%;
@@ -23,10 +23,12 @@ div.header_content {
 }
 
 .title_block {
+    display: inline-block;
     width: 10%;
 }
 
 .desc_block {
+    display: inline-block;
     width: 90%;
 }
 

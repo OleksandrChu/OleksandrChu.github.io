@@ -1,0 +1,41 @@
+.skill_container {
+    width: 100%;
+    display: flex;
+}
+
+.item {
+    position: relative;
+    margin: 1vh;
+    padding: 2vh;
+    background: #cecbcb;
+    border-radius: 5px;
+}
+
+.badge {
+    position: absolute;
+    top: -1vh;
+    right: 1vh;
+    min-width: 24px;
+    padding: 1%;
+    border-radius: 100%;
+    font-size: 1em;
+    text-align: center;
+
+    color: #fefefe;
+}
+
+.badge-red {
+    background: #ff3535;
+}
+
+.badge-blue {
+    background: #3599ff;
+}
+
+.badge-green{
+    background: #3bb78f;
+}
+
+body {
+    padding: 2%;
+}

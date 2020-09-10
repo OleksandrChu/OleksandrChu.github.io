@@ -1,0 +1,186 @@
+:root {
+    --per-40: 40%;
+    --per-60: 60%;
+    --per-50: 50%;
+}
+
+.section_background {
+    background: #FFFAF2;
+}
+
+.container {
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.skill_container {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    width: 35%;
+}
+
+.progress-bar {
+    width: 65%;
+    background: #F5D6AB;
+}
+
+.progress-70 {
+    width: 70%;
+    height: 2vh;
+    background: #C66C49;
+}
+
+.content_container {
+    width: 65%;
+}
+
+.avatar {
+    margin: auto;
+    max-width: 50vw;
+    max-height: 45vw;
+}
+
+.image_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.image_rect_10 {
+    width: 100%;
+    margin: 2%;
+    max-height: 10vh;
+}
+
+.image_rect_15 {
+    width: 100%;
+    margin: 2%;
+    max-height: 15vh;
+}
+
+.image_square {
+    margin: 2%;
+    width: 100%;
+    max-height: 15vh;
+}
+
+.left_container {
+    width: 50%;
+    float: left;
+}
+
+.text_underline {
+    text-decoration-line: underline;
+}
+
+header {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 100%;
+    background-image: url("header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    padding: 3vh 8vw;
+}
+
+section p {
+    margin: auto;
+    font-family: Libre Franklin, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+footer {
+    margin: auto;
+    font-family: Libre Franklin, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    font-family: Libre Franklin, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #333333;
+}
+
+h2 {
+    font-family: Libre Franklin, serif;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+    color: #333333;
+}
+
+h3 {
+    margin: auto;
+    font-family: Libre Franklin, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 25px;
+    color: #333333;
+}
+
+header h1 {
+    text-align: center;
+    font-family: Libre Franklin, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+header h2 {
+    font-family: Libre Franklin, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    padding-top: 2vh;
+    text-align: center;
+}
+
+header p {
+    font-family: Libre Franklin, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+
+}
