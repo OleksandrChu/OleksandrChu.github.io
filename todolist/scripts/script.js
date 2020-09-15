@@ -72,10 +72,7 @@ function buildTodoItemHtml(task) {
     editButton.id = "todo-edit-button";
     editButton.innerHTML = '&#xE70F;';
     editButton.addEventListener('click', ev => {
-        console.log(true)
-        // updateTask(task).then(res => {
-        //     console.log(res)
-        // });
+        todoBodyElement.replaceChild(buildEditBlock(task), div)
     });
 
     removeButton.className = 'btn btn-light';
@@ -98,11 +95,53 @@ function buildTodoItemHtml(task) {
     return div;
 }
 
+function buildEditBlock(task) {
+    let editContainerElement = document.createElement('div');
+    let input = document.createElement('input');
+    let applyButton = document.createElement('button');
+    let rejectButton = document.createElement('button');
+    editContainerElement.className = 'edit-container';
+    input.type = 'text';
+    input.className = 'form-control';
+    input.value = task.name;
+
+    applyButton.className = 'btn btn-success';
+    applyButton.textContent = "Edit";
+    applyButton.addEventListener('click', ev => {
+        if (input.value.trim().length > 0) {
+            task.name = input.value.trim();
+            updateTask(task).then(task => {
+                todoBodyElement.replaceChild(buildTodoItemHtml(task), editContainerElement);
+            });
+        } else {
+            alert("Task name is empty");
+        }
+    })
+
+    rejectButton.className = 'btn btn-danger';
+    rejectButton.textContent = "Reject";
+    editContainerElement.appendChild(input);
+    editContainerElement.appendChild(applyButton);
+    editContainerElement.appendChild(rejectButton);
+    return editContainerElement;
+}
+
 function setTaskDoneStatusDecoration(task, title) {
     if (task.done) {
         title.className = 'done_task'
     } else {
         title.className = '';
+    }
+}
+
+function updateTask(task) {
+    if (this.value.trim().length > 0) {
+        task.name = this.value.trim();
+        updateTask(task).then(task => {
+            todoBodyElement.replaceChild(buildTodoItemHtml(task), div);
+        });
+    } else {
+        alert("Task name is empty");
     }
 }
 

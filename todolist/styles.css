@@ -114,3 +114,14 @@ header h2 {
 .done_task {
     text-decoration: line-through;
 }
+
+.edit-container {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #aeadad;
+}
+
+.edit-container button {
+    margin-top: 8px;
+    margin-right: 8px;
+}
