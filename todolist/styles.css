@@ -1,0 +1,95 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300);
+
+html body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1em;
+    height: 100%;
+}
+
+header h2 {
+    margin-left: 20%;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    color: #d7d7d7;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #1d262d 74%);
+}
+
+.sidebar ul {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.sidebar li {
+    margin-top: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.sidebar li:hover {
+    background-image: linear-gradient(315deg, #1d1d1d, #1f1f26);
+}
+
+
+.todo-container {
+    margin-left: 300px;
+    width: 100%;
+    padding: 64px;
+}
+
+.todo-body {
+    width: 100%;
+}
+
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #aeadad;
+}
+
+.todo-item input {
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.todo-item span {
+    text-align: justify;
+}
+
+.todo-item button {
+    font-family: "Segoe MDL2 Assets", "Open Sans", sans-serif;
+    margin-left: 8px;
+    margin-bottom: auto;
+}
+
+#todo-remove-button:hover {
+    background: #dc3545;
+}
+
+#todo-edit-button:hover {
+    background: #8f8e8e;
+}
+
+.todo-menu {
+    display: flex;
+    margin-left: auto;
+}
+
+.todo-input {
+    margin-top: 8px;
+}
+
+.todo-input button {
+    margin-top: 8px;
+}
