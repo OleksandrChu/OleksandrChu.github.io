@@ -1,11 +1,3 @@
-let todos = [
-    new Task("Buy bread", false),
-    new Task("Buy milk", false),
-    new Task("Buy bread", true),
-    new Task("Buy milk", false),
-    new Task("Buy bread", true)
-];
-
 const todoBodyElement = document.querySelector("#todo-body");
 const todoListsElement = document.querySelector("#todo-lists");
 let todoLists = [];
@@ -22,7 +14,15 @@ function appendTasks(tasks) {
 
 function appendList(list) {
     let li = document.createElement('li');
+    let deleteButton = document.createElement('button');
+    deleteButton.className = 'btn btn-light';
+    deleteButton.innerHTML = '&#59213;';
+    deleteButton.addEventListener('click', ev => {
+        ev.stopPropagation();
+        console.log(true);
+    })
     li.innerText = list.name;
+    li.appendChild(deleteButton);
     li.addEventListener('click', (event) => {
         event.preventDefault();
         onListItemClickEvent(list);
@@ -49,41 +49,61 @@ function appendLists() {
 function buildTodoItemHtml(task) {
     let div = document.createElement('div');
     let check = document.createElement('input');
+    let title = document.createElement('p');
     let buttonMenuElement = document.createElement('div');
     let editButton = document.createElement('button');
     let removeButton = document.createElement('button');
     div.className = "todo-item";
     check.type = "checkbox";
     check.checked = task.done;
+    check.innerText = "Не работает"
+    check.addEventListener('click', ev => {
+        task.done = !task.done;
+        updateTask(task)
+            .then(task => setTaskDoneStatusDecoration(task, title));
+    })
+
+    title.innerText = task.name;
+    setTaskDoneStatusDecoration(task, title);
 
     buttonMenuElement.className = 'todo-menu';
 
     editButton.className = 'btn btn-light';
     editButton.id = "todo-edit-button";
     editButton.innerHTML = '&#xE70F;';
-    editButton.addEventListener('click', (ev) => {
-        editTask(task);
+    editButton.addEventListener('click', ev => {
+        console.log(true)
+        // updateTask(task).then(res => {
+        //     console.log(res)
+        // });
     });
 
     removeButton.className = 'btn btn-light';
     removeButton.id = "todo-remove-button";
     removeButton.innerHTML = '&#xE74D;';
-    removeButton.addEventListener('click', (ev) => {
+    removeButton.addEventListener('click', ev => {
         deleteTask(task).then(res => {
             let index = currentList.tasks.indexOf(currentList.tasks.find(el => el.id === task.id));
-            console.log(index)
             currentList.tasks.splice(index, 1);
             appendTasks(currentList.tasks);
         });
     });
 
     div.appendChild(check);
-    div.innerHTML += `<p id="todo-text">${task.name}</p>`
+    div.appendChild(title);
     div.appendChild(buttonMenuElement)
     div.appendChild(editButton)
     div.appendChild(removeButton)
-    console.log(div)
+
     return div;
+}
+
+function setTaskDoneStatusDecoration(task, title) {
+    if (task.done) {
+        title.className = 'done_task'
+    } else {
+        title.className = '';
+    }
 }
 
 appendLists();

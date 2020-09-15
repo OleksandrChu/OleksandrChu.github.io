@@ -25,7 +25,14 @@ function deleteTask(task) {
     return fetch(`http://localhost:5000/api/task/${task.id}`, options);
 }
 
-function editTask(task) {
-    console.log("edit");
-    console.log(task);
+function updateTask(task) {
+    const options = {
+        method: 'PUT',
+        body: JSON.stringify(task),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    return fetch(`http://localhost:5000/api/task/${task.id}`, options)
+        .then(res => res.json());
 }
